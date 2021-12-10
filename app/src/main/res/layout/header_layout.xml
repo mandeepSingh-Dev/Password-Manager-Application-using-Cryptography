@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:id="@+id/header_ConstraintLayout"
+    android:fitsSystemWindows="true"
+    android:orientation="horizontal"
+    >
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_gravity="center"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/profile_pic"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="7dp"
+        android:src="@drawable/ic_googleicon"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/Profile_Name"
+        />
+
+    <TextView
+        android:id="@+id/Profile_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="7dp"
+        android:fontFamily="cursive"
+        android:textSize="22dp"
+        android:hint="Account Name"
+        android:textColorHint="@color/purple_200"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/profile_pic"
+        app:layout_constraintLeft_toRightOf="@id/profile_pic"
+        app:layout_constraintTop_toTopOf="@id/profile_pic"
+
+        />
+
+
+
+</LinearLayout>

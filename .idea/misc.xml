@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/mandeep singh/.gradle/caches/transforms-3/6ddbc6253b8055a13665a56b11e6556d/transformed/appcompat-1.4.0/res/layout/support_simple_spinner_dropdown_item.xml" value="0.23802083333333332" />
+        <entry key="..\:/Users/mandeep singh/OneDrive/Desktop/Downloads/NotesPasswordManagerAppAndroid/app/src/main/res/drawable/gradientshapebottom.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mandeep singh/OneDrive/Desktop/Downloads/NotesPasswordManagerAppAndroid/app/src/main/res/drawable/ic_googleicon.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mandeep singh/OneDrive/Desktop/Downloads/NotesPasswordManagerAppAndroid/app/src/main/res/drawable/outline_border.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mandeep singh/OneDrive/Desktop/Downloads/NotesPasswordManagerAppAndroid/app/src/main/res/drawable/shape_button.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mandeep singh/OneDrive/Desktop/Downloads/NotesPasswordManagerAppAndroid/app/src/main/res/drawable/shape_button2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mandeep singh/OneDrive/Desktop/Downloads/NotesPasswordManagerAppAndroid/app/src/main/res/layout/activity_main.xml" value="0.152" />
+        <entry key="..\:/Users/mandeep singh/OneDrive/Desktop/Downloads/NotesPasswordManagerAppAndroid/app/src/main/res/layout/activity_navigation_fragments.xml" value="0.23802083333333332" />
+        <entry key="..\:/Users/mandeep singh/OneDrive/Desktop/Downloads/NotesPasswordManagerAppAndroid/app/src/main/res/layout/activity_navigation_fragments2.xml" value="0.23802083333333332" />
+        <entry key="..\:/Users/mandeep singh/OneDrive/Desktop/Downloads/NotesPasswordManagerAppAndroid/app/src/main/res/layout/activity_splash_screen.xml" value="0.23802083333333332" />
+        <entry key="..\:/Users/mandeep singh/OneDrive/Desktop/Downloads/NotesPasswordManagerAppAndroid/app/src/main/res/layout/fragment_password_details.xml" value="0.2" />
+        <entry key="..\:/Users/mandeep singh/OneDrive/Desktop/Downloads/NotesPasswordManagerAppAndroid/app/src/main/res/layout/fragment_password_lists.xml" value="0.23802083333333332" />
+        <entry key="..\:/Users/mandeep singh/OneDrive/Desktop/Downloads/NotesPasswordManagerAppAndroid/app/src/main/res/layout/header_layout.xml" value="0.23802083333333332" />
+        <entry key="..\:/Users/mandeep singh/OneDrive/Desktop/Downloads/NotesPasswordManagerAppAndroid/app/src/main/res/layout/password_list.xml" value="0.4" />
+        <entry key="..\:/Users/mandeep singh/OneDrive/Desktop/Downloads/NotesPasswordManagerAppAndroid/app/src/main/res/menu/nav_drawer_items.xml" value="0.23802083333333332" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
