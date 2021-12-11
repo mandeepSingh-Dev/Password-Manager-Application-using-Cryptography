@@ -68,9 +68,9 @@ class PasswordDetailsFragment : Fragment()
 
         var navController=Navigation.findNavController(view)
 
-        KeyStoreWrapper.createAndroidKeyStoreAsymmetricKey("MASTER_KEY")
+       /* KeyStoreWrapper.createAndroidKeyStoreAsymmetricKey("MASTER_KEY")
         var masterKey = KeyStoreWrapper.getAndroidKeyStoreAsymmetricKeyPair("MASTER_KEY")
-        masterKey?.public
+        masterKey?.public*/
 
         LocalBroadcastManager.getInstance(requireContext()).registerReceiver(receiver, IntentFilter("SEND"))
 
@@ -106,13 +106,15 @@ class PasswordDetailsFragment : Fragment()
             binding?.textInputLayout2?.editText?.setText(pDetailsEntites?.Account)
             binding?.textInputLayout3?.editText?.setText(pDetailsEntites?.username)
 
-            Log.d("KKEEY2",key.encoded.toString())
+           // Log.d("KKEEY2",key.encoded.toString())
             Log.d("helloPPASDSKFN",pDetailsEntites?.password!!)
-            Log.d("jgnkfngjkfgn",pDetailsEntites?.passwordArray.toString())
+            Log.d("PasswordONLY",arguments?.get("PasswordONLY").toString())
+
+           // Log.d("jgnkfngjkfgn",pDetailsEntites?.passwordArray.toString())
 
            /* var decrypted=CipherWrapper.decrypt(pDetailsEntites?.password!!,masterKey?.private!!)
             Log.d("decryptes",decrypted)*/
-            Log.d("decryptedSIZE","${pDetailsEntites?.password!!.toByteArray().size}   l")
+           // Log.d("decryptedSIZE","${pDetailsEntites?.password!!.toByteArray().size}   l")
 
 
            /* var decryptes=MyCryptoGraphy2.RSADecrypt(pDetailsEntites?.passwordArray,keypair)
@@ -122,7 +124,7 @@ class PasswordDetailsFragment : Fragment()
              // Toast.makeText(context, MyCryptography.decrypting(pDetailsEntites?.password?.trim()!!,key)+"dfdf", Toast.LENGTH_LONG).show()
 
 
-            binding?.textInputLayout4?.editText?.setText(pDetailsEntites?.password!!)
+            binding?.textInputLayout4?.editText?.setText(arguments?.get("PasswordONLY").toString())
             binding?.textInputLayout5?.editText?.setText(pDetailsEntites?.weblink)
         }
 
@@ -134,6 +136,9 @@ class PasswordDetailsFragment : Fragment()
             username=binding?.textInputLayout3?.editText?.text.toString()
             password=binding?.textInputLayout4?.editText?.text.toString()
             weblink=binding?.textInputLayout5?.editText?.text.toString()
+
+            KeyStoreWrapper.createAndroidKeyStoreAsymmetricKey(title!!)
+            var masterKey = KeyStoreWrapper.getAndroidKeyStoreAsymmetricKeyPair(title!!)
 
 
             var encrypted_PASSWORD= CipherWrapper.encrypt(password!!/*"HelloWorld"*/,masterKey?.public)
@@ -161,7 +166,10 @@ class PasswordDetailsFragment : Fragment()
              CoroutineScope(Dispatchers.Default).launch {
                  MyRoom.getInstance(activity?.applicationContext!!).getDaoInterface().insert(pDetailsEntites)
              }
-            navController.navigate(R.id.passwordListsFragment)
+            var bundle=Bundle()
+            bundle.putString("alias",title!!)
+
+            navController.navigate(R.id.passwordListsFragment,bundle)
         }
 
     }

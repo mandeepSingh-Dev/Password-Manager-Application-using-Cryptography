@@ -40,9 +40,9 @@ class SplashScreen : AppCompatActivity() {
         binding.notesImage.animation=AnimationUtils.loadAnimation(applicationContext,R.anim.splashscreen_anim_fromup)
        binding.passwordImage.animation=AnimationUtils.loadAnimation(applicationContext,R.anim.splashscreen_anim_fromdown)
         CoroutineScope(Dispatchers.Default).launch {
-            delay(5000)
+            delay(2000)
 
-            val intent=Intent(applicationContext,NavigationFragmentsActivity::class.java)
+            val intent=Intent(applicationContext,MainActivity ::class.java)
 
                startActivity(intent)
             finish()

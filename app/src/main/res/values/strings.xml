@@ -4,5 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="NavigationOpen">navigation open</string>
     <string name="NavigationClose">navigation close</string>
+    <string name="setting_item">0</string>
+    <string name="logout_item">1</string>
 
 </resources>

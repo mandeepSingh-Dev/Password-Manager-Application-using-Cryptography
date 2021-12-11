@@ -5,11 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/styledLayout1"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:id="@+id/styledLayout1"
         android:background="@drawable/gradientshapebottom"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -29,7 +28,7 @@
         app:layout_constraintLeft_toLeftOf="@id/styledLayout1"
         app:layout_constraintTop_toTopOf="@id/styledLayout1" />
     <androidx.cardview.widget.CardView
-        android:layout_width="300dp"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:id="@+id/cardview"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -38,129 +37,273 @@
         android:layout_marginTop="200dp"
         app:cardCornerRadius="20dp"
         app:cardBackgroundColor="#FFFFFF"
+
         >
-      <androidx.constraintlayout.widget.ConstraintLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:id="@+id/Constraintlaycontainer"
-          >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/phone"
-            android:text="phone"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:textColor="#00695C"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
 
-            />
-
-        <EditText
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
-            android:id="@+id/phoneNumberEdittext"
-            android:layout_marginLeft="10dp"
-            android:inputType="phone"
-            android:hint="  9650......."
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/phone"
-            android:fontFamily="sans-serif-black"/>
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+            android:id="@+id/linearlaycontainer"
+            >
 
-          <TextView
-              android:layout_width="wrap_content"
-              android:layout_height="match_parent"
-              android:id="@+id/OTP"
-              android:text="OTP"
-              android:layout_marginLeft="10dp"
-              android:layout_marginTop="10dp"
-              android:textColor="#00695C"
-              android:textSize="20sp"
-              android:textStyle="bold"
-              android:enabled="false"
-              android:visibility="gone"
-              app:layout_constraintLeft_toLeftOf="parent"
-              app:layout_constraintTop_toBottomOf="@id/phoneNumberEdittext"
-              />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/phonenumberINPUTLAYOUT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="phone"
+                app:endIconMode="custom"
+                app:endIconDrawable="@drawable/ic_googleicon"
+                app:endIconTint="#EF6C00"
+                app:hintAnimationEnabled="true"
+                app:hintTextColor="#AC014C"
+                android:textColorHint="@color/purple_200"
+                app:boxBackgroundColor="@color/white"
+                android:layout_gravity="center"
+                app:boxStrokeColor="#FF8F00"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeErrorColor="@color/common_google_signin_btn_text_dark_pressed"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxBackgroundMode="outline"
+                android:layout_marginTop="20dp"
+                >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phonenumberEdittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="@color/black"
+                />
+            </com.google.android.material.textfield.TextInputLayout>
 
-          <EditText
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/otpINPUTLAYOUT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="OTP"
+                app:endIconMode="custom"
+                app:endIconDrawable="@drawable/ic_googleicon"
+                app:endIconTint="#EF6C00"
+                app:hintAnimationEnabled="true"
+                app:hintTextColor="#AC014C"
+                android:textColorHint="@color/purple_200"
+                app:boxBackgroundColor="@color/white"
+                android:layout_gravity="center"
+                app:boxStrokeColor="#FF8F00"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeErrorColor="@color/common_google_signin_btn_text_dark_pressed"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxBackgroundMode="outline"
+                android:layout_marginTop="20dp"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/otpInputEdittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textColor="@color/black"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+               android:id="@+id/buttonConstraintLay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp">
+            <Button
+                android:id="@+id/signinButton"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                style="?attr/materialButtonOutlinedStyle"
+                android:text="Sign in"
+                android:background="@drawable/shape_button2"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:textAllCaps="false"/>
+                <Button
+                    android:id="@+id/GetOtpButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:text="Get OTP"
+                    android:background="@drawable/shape_button2"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:textSize="16sp"
+                    android:enabled="false"
+                    android:textAllCaps="false"
+                    android:visibility="gone"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/orTExt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:text="or"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/black"
+                />
+
+            <Button
+                android:id="@+id/googleloginButton"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/orTExt"
+                android:text="Login"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:paddingLeft="14dp"
+                android:drawableLeft="@drawable/ic_googleicon"
+                android:background="@drawable/shape_button"
+                style="?attr/materialButtonOutlinedStyle"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+
+
+        </LinearLayout>
+
+        <!--  <androidx.constraintlayout.widget.ConstraintLayout
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:id="@+id/OTPEdittext"
-              android:layout_marginLeft="10dp"
-              android:inputType="phone"
-              android:hint="Enter OTP.."
-              android:enabled="false"
-              android:visibility="gone"
-              app:layout_constraintLeft_toLeftOf="parent"
-              app:layout_constraintTop_toBottomOf="@id/OTP"
-              android:fontFamily="sans-serif-black"/>
+              android:id="@+id/Constraintlaycontainer"
+              >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/phone"
+                android:text="phone"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:textColor="#00695C"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
 
-          <Button
-              android:id="@+id/GetOtpButton"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              app:layout_constraintTop_toBottomOf="@id/OTPEdittext"
-              app:layout_constraintLeft_toLeftOf="parent"
-              app:layout_constraintRight_toRightOf="parent"
-              android:text="Get OTP"
-              android:background="@drawable/shape_button2"
-              style="?attr/materialButtonOutlinedStyle"
-              android:textSize="16sp"
-              android:layout_marginTop="160dp"
-              android:textAllCaps="false"/>
-          <Button
-              android:id="@+id/signinButton"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              app:layout_constraintTop_toBottomOf="@id/OTPEdittext"
-              app:layout_constraintLeft_toLeftOf="parent"
-              style="?attr/materialButtonOutlinedStyle"
-              app:layout_constraintRight_toRightOf="parent"
-              android:text="Sign in"
-              android:background="@drawable/shape_button2"
-              android:layout_marginTop="160dp"
-              android:enabled="true"
-              android:textSize="16sp"
-              android:visibility="gone"
-              android:textAllCaps="false"/>
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/phoneNumberEdittext"
+                android:layout_marginLeft="10dp"
+                android:inputType="phone"
+                android:hint="  9650......."
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/phone"
+                android:fontFamily="sans-serif-black"/>
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:id="@+id/OTP"
+                  android:text="OTP"
+                  android:layout_marginLeft="10dp"
+                  android:layout_marginTop="10dp"
+                  android:textColor="#00695C"
+                  android:textSize="20sp"
+                  android:textStyle="bold"
+                  android:enabled="false"
+                  android:visibility="gone"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/phoneNumberEdittext"
+                  />
+
+              <EditText
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/OTPEdittext"
+                  android:layout_marginLeft="10dp"
+                  android:inputType="phone"
+                  android:hint="Enter OTP"
+                  android:enabled="false"
+                  android:visibility="gone"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/OTP"
+                  android:fontFamily="sans-serif-black"/>
+
+              <Button
+                  android:id="@+id/signinButton"
+                  android:layout_width="wrap_content"
+                  android:layout_height="50dp"
+                  app:layout_constraintTop_toBottomOf="@id/OTPEdittext"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  style="?attr/materialButtonOutlinedStyle"
+                  app:layout_constraintRight_toRightOf="parent"
+                  android:text="Sign in"
+                  android:background="@drawable/shape_button2"
+                  android:enabled="true"
+                  android:visibility="gone"
+                  app:layout_constraintBottom_toTopOf="@id/orTExt"
+                  android:textSize="16sp"
+                  android:layout_marginBottom="30dp"
+                  android:textAllCaps="false"/>
+              <Button
+                  android:id="@+id/GetOtpButton"
+                  android:layout_width="wrap_content"
+                  android:layout_height="50dp"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/OTPEdittext"
+                  app:layout_constraintBottom_toTopOf="@id/orTExt"
+                  app:layout_constraintRight_toRightOf="parent"
+                  android:text="Get OTP"
+                  android:background="@drawable/shape_button2"
+                  style="?attr/materialButtonOutlinedStyle"
+                  android:layout_marginBottom="30dp"
+                  android:textSize="16sp"
+                  android:enabled="false"
+                  android:textAllCaps="false"/>
 
 
-          <TextView
-              android:id="@+id/orTExt"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              app:layout_constraintLeft_toLeftOf="parent"
-              app:layout_constraintTop_toBottomOf="@id/GetOtpButton"
-              android:text="or"
-              android:textSize="20sp"
-              android:textColor="@color/black"
-              android:layout_marginTop="20dp"
-              app:layout_constraintRight_toRightOf="parent"
-              />
-         <Button
-             android:id="@+id/loginButton"
-             android:layout_width="280dp"
-             android:layout_height="wrap_content"
-             app:layout_constraintLeft_toLeftOf="parent"
-             app:layout_constraintRight_toRightOf="parent"
-             app:layout_constraintTop_toBottomOf="@id/orTExt"
-             android:text="Login"
-             android:textAllCaps="false"
-             android:textSize="18sp"
-             android:paddingLeft="14dp"
-             android:drawableLeft="@drawable/ic_googleicon"
-             android:background="@drawable/shape_button"
-             style="?attr/materialButtonOutlinedStyle"
-             android:layout_marginTop="20dp"
-             android:layout_marginBottom="60dp"
-             app:layout_constraintBottom_toBottomOf="parent" />
+
+              <TextView
+                  android:id="@+id/orTExt"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/signinButton"
+                  app:layout_constraintBottom_toTopOf="@id/googleloginButton"
+                  android:textSize="20sp"
+                  android:text="or"
+                  android:textColor="@color/black"
+                  android:layout_marginBottom="20dp"
+                  app:layout_constraintRight_toRightOf="parent"
+                  />
+             <Button
+                 android:id="@+id/googleloginButton"
+                 android:layout_width="200dp"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintLeft_toLeftOf="parent"
+                 app:layout_constraintRight_toRightOf="parent"
+                 app:layout_constraintTop_toBottomOf="@id/orTExt"
+                 android:text="Login"
+                 android:textAllCaps="false"
+                 android:textSize="18sp"
+                 android:paddingLeft="14dp"
+                 android:drawableLeft="@drawable/ic_googleicon"
+                 android:background="@drawable/shape_button"
+                 style="?attr/materialButtonOutlinedStyle"
+                 app:layout_constraintBottom_toBottomOf="parent" />
 
 
-      </androidx.constraintlayout.widget.ConstraintLayout>
+          </androidx.constraintlayout.widget.ConstraintLayout>-->
     </androidx.cardview.widget.CardView>
 
 

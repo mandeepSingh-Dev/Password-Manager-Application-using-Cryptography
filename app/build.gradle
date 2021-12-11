@@ -96,6 +96,8 @@ dependencies {
     androidTestImplementation("androidx.security:security-app-authenticator:1.0.0-alpha01")
     implementation "net.zetetic:android-database-sqlcipher:4.5.0"
     implementation "androidx.sqlite:sqlite:2.0.1"
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
 
 
 

@@ -49,6 +49,7 @@ class PasswordListsFragment : Fragment()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        var masterkey:KeyPair?=null
        /* var keypair=MyCryptoGraphy2.generateKeyPair()
         var encryptedRSA=MyCryptoGraphy2.RSAEncrypt("HELLO MANDEEP",keypair)
         Log.d("fkgnfk",encryptedRSA.toString())
@@ -56,8 +57,13 @@ class PasswordListsFragment : Fragment()
         Log.d("fkgnfk",decryptedsTRIF)*/
 
 
-        val masterkey=KeyStoreWrapper.getAndroidKeyStoreAsymmetricKeyPair("MASTER_KEY")
-        Log.d("dfdfd",masterkey?.private.toString())
+        if(arguments!=null)
+        {
+        //val masterkey=KeyStoreWrapper.getAndroidKeyStoreAsymmetricKeyPair("MASTER_KEY")
+            var aliasTITLE=arguments?.get("alias").toString()
+           //  masterkey=KeyStoreWrapper.getAndroidKeyStoreAsymmetricKeyPair(aliasTITLE)
+
+        }
 
 
         val navController = Navigation.findNavController(view)
@@ -92,15 +98,20 @@ class PasswordListsFragment : Fragment()
                     override fun onItemClick(position: Int, itemView: View) {
 
                         var bundle:Bundle= Bundle()
-                       // bundle.putParcelable("Passworddetails",arraylist?.get(position))
-                       // navController.navigate(R.id.passwordDetailsFragment,bundle)
 
                         Log.d("aizze","${arraylist?.size!!} mfd")
 
+                        masterkey=KeyStoreWrapper.getAndroidKeyStoreAsymmetricKeyPair((arraylist?.get(position)?.title!!))
+                                Log.d("dfdfd",masterkey?.private.toString())
+
                         val decrypt=CipherWrapper.decrypt(arraylist?.get(position)?.password!!,masterkey?.private)
-                        Log.d("CIPHER",arraylist?.get(position)?.password!!)
-                        Log.d("decryptedSIZE","${arraylist?.get(position)?.password!!.toByteArray().size}   l")
+                        Toast.makeText(context,decrypt,Toast.LENGTH_SHORT).show()
                         Log.d("dfdfd",decrypt)
+
+                        bundle.putParcelable("Passworddetails",arraylist?.get(position))
+                        bundle.putString("PasswordONLY",decrypt!!)
+
+                        navController.navigate(R.id.passwordDetailsFragment,bundle)
 
                     }
                 })
