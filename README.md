@@ -6,5 +6,5 @@ User Can store their Personal Password details in the local Room database in enc
 (Ciphertext)format. Local Database is secured by using SQLCipher.
 User Requires Firebase phone authentication or Google Login to save his/her password details in
 firebase realtime database.
-User can access their password details in Decrypted format to update in Databases.
--------------------------
+User can access their password details in Decrypted format to update in Databases
+------------------------
